@@ -1,25 +1,29 @@
 import Image from "next/image";
+import Link from 'next/link'
+import Menu from "@/components/Menu";
 
 export default function Header() {
     return (
         <div className="header py-5 p-4">
             <div className="container mx-auto max-w-screen-lg">
-                <div className="flex justify-between items-center w-full">
+                <div className="flex justify-between items-center w-full mb-5">
                     <div className="logo">
-                        <Image
-                            src="/logo.png"
-                            alt="Gogo Anime"
-                            width={140}
-                            height={54}
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/logo.png"
+                                alt="Gogo Anime"
+                                width={140}
+                                height={54}
+                                priority
+                            />
+                        </Link>
                     </div>
                     
                     <form>   
                         <div className="relative flex items-center gap-x-3">
                             <input className="shadow lg:w-72 w-full px-3 py-2 rounded" type="search" id="default-search" placeholder="Search Anime..." required />
                             <button>            
-                                <svg className="w-5 h-5 text-dark" 
+                                <svg className="w-5 h-5 text-white" 
                                 aria-hidden="true" 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 fill="none" 
@@ -33,6 +37,9 @@ export default function Header() {
                             </button>
                         </div>
                     </form>
+                </div>
+                <div className="border-t border-b border-dashed border-white">
+                    <Menu class="flex gap-x-4 py-3 font-semibold text-white" />
                 </div>
             </div>
         </div>

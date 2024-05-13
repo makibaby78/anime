@@ -12,8 +12,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Testing",
-  description: "Testing",
+  title: "Next JS Anime",
+  description: "Displaying anime from API",
   icons: {
     icon: "/anime.png",
     apple: "/anime.png",
@@ -27,10 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <Header/>
-          {children}
-        <Footer/>
+      <body className={ `${montserrat.className} bg-gray-900`}>
+          <Header/>
+            {children}
+          <Footer/>
       </body>
     </html>
   );
