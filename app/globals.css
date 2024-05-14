@@ -28,3 +28,11 @@
 .image-wrapper{
   height: 200px;
 }
+
+.cs-link {
+  color: #e95370;
+}
+
+.cs-link:hover {
+  text-decoration: underline;
+}

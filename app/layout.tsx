@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import Loading from "./loading";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
@@ -29,7 +31,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={ `${montserrat.className} bg-gray-900`}>
           <Header/>
-            {children}
+            <Suspense fallback={<Loading />}>
+              {children}
+            </Suspense>
           <Footer/>
       </body>
     </html>

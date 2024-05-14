@@ -1,19 +1,22 @@
 'use client'
 
 import Image from "next/image";
+import Link from 'next/link'
 
 export default function Card(props: any) {
 
     return (
         <>
             <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
-                <Image
-                    src={ `${props.details.images.jpg.image_url}` }
-                    alt={ props.details.title }
-                    width={225}
-                    height={318}
-                    style={{ width: '100%', height: 'auto' }}
-                />
+                <Link href={ `/anime/${props.details.mal_id}`}>
+                    <Image
+                        src={ `${props.details.images.jpg.image_url}` }
+                        alt={ props.details.title }
+                        width={225}
+                        height={318}
+                        style={{ width: '100%', height: 'auto' }}
+                    />
+                </Link>
             </div>
             <h4 className="text-white font-bold mt-2 text-sm">{ props.details.title }</h4>
             { props.details.genres.length != 0 && 
