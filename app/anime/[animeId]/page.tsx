@@ -3,9 +3,11 @@ import Link from 'next/link'
 
 export default async function AnimeDetails({ params } : any) {
 
-    const res = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`);
+    const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`);
+    const fetchAnimeEpisodes = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/videos/episodes`);
 
-    const anime = (await res.json()).data;
+    const anime = (await fetchAnime.json()).data;
+    const animeEpisodes = (await fetchAnimeEpisodes.json()).data.reverse();
 
     return (
         <section className="py-5 p-4">
@@ -87,9 +89,11 @@ export default async function AnimeDetails({ params } : any) {
                         <h1 className="mb-4 font-extrabold leading-none tracking-tight text-md md:text-xl lg:text-2xl">
                             { anime.title }
                         </h1>
+
                         <p className="mb-5 text-sm">
                             { anime.synopsis }
                         </p>
+
                         { anime.trailer.embed_url && 
                         <div className="mb-5">
                             <h3 className="mb-4 font-extrabold leading-none tracking-tight text-sm md:text-lg lg:text-xl">
@@ -98,38 +102,51 @@ export default async function AnimeDetails({ params } : any) {
                             <iframe width="100%" height="440px" src={ anime.trailer.embed_url } title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                         }
-                        { anime.relations.length !=0 && <>
-                        <div className=" bg-gray-950 p-4">
-                            <h4 className="mb-2">Other Information</h4>
-                            {anime.relations.map((relation: any, index: number) => {
+                        <div className="mb-5">
+                            <h4 className="mb-2 font-semibold">Episodes</h4>
+                            <ul className="flex gap-3 flex-wrap">
+                                {animeEpisodes.map((episode: any, index: number) => {
                                 return (
-                                    <p className="mb-2 text-xs" key={index}>
-                                        <span className="text-white capitalize">{ relation.relation }: </span> 
-                                            {relation.entry.map((entry: any, index: number) => {
-                                                return relation.entry.length - 1 === index ?
-                                                (
-                                                    <span key={index}>
-                                                        <Link className="cs-link" href={ `/${entry.type}/${entry.mal_id}` }>
-                                                            { entry.name }
-                                                        </Link>
-                                                    .</span>
-                                                )
-                                                :
-                                                (
-                                                    <span key={index}>
-                                                        <Link className="cs-link" key={index} href={ `/${entry.type}/${entry.mal_id}` }>
-                                                            <span className="cs-link">{ entry.name }</span>
-                                                        </Link>
-                                                    , </span>
-                                                )
-                                            })}
-                                    </p>
+                                    <li className="episode-box" key={ index }>
+                                        <Link href={ `/anime/${anime.mal_id}/episodes/${episode.mal_id}` }>
+                                            <span className="w-full block py-1 px-2">{ episode.mal_id }</span>
+                                        </Link>
+                                    </li>
                                 )
-                            })}
-                        </div></>}
+                                })}
+                            </ul>
+                        </div>
                     </div>
-
                 </div>
+                { anime.relations.length !=0 && <>
+                <div className=" bg-gray-950 p-4 text-white">
+                    <h4 className="mb-2">Other Information</h4>
+                    {anime.relations.map((relation: any, index: number) => {
+                        return (
+                            <p className="mb-2 text-xs" key={index}>
+                                <span className="text-white capitalize">{ relation.relation }: </span> 
+                                    {relation.entry.map((entry: any, index: number) => {
+                                        return relation.entry.length - 1 === index ?
+                                        (
+                                            <span key={index}>
+                                                <Link className="cs-link" href={ `/${entry.type}/${entry.mal_id}` }>
+                                                    { entry.name }
+                                                </Link>
+                                            .</span>
+                                        )
+                                        :
+                                        (
+                                            <span key={index}>
+                                                <Link className="cs-link" key={index} href={ `/${entry.type}/${entry.mal_id}` }>
+                                                    <span className="cs-link">{ entry.name }</span>
+                                                </Link>
+                                            , </span>
+                                        )
+                                    })}
+                            </p>
+                        )
+                    })}
+                </div></>}
             </div>
         </section>
     )

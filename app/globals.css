@@ -36,3 +36,15 @@
 .cs-link:hover {
   text-decoration: underline;
 }
+
+.episode-box{
+  color: #fff;
+  display: block;
+  background-color: #363636;
+  width: 97px;
+  font-size: 13px;
+  transition-duration: 0.2s;
+}
+.episode-box:hover{
+  background-color: #fab141;
+}

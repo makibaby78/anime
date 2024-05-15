@@ -8,6 +8,12 @@ const nextConfig = {
               port: '',
               pathname: '/images/anime/**',
             },
+            {
+              protocol: 'https',
+              hostname: 'img1.ak.crunchyroll.com',
+              port: '',
+              pathname: '/**',
+            },
           ],
     },
 };
