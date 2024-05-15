@@ -4,9 +4,11 @@ import Link from 'next/link'
 export default async function AnimeDetails({ params } : any) {
 
     const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`);
-    const fetchAnimeEpisodes = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/videos/episodes`);
 
     const anime = (await fetchAnime.json()).data;
+    
+    const fetchAnimeEpisodes = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/videos/episodes`);
+
     const animeEpisodes = (await fetchAnimeEpisodes.json()).data.reverse();
 
     return (
@@ -60,13 +62,13 @@ export default async function AnimeDetails({ params } : any) {
                                     <span key={index}><Link href={ studio.url }>{ studio.name }</Link>, </span>
                             })}</li></>}
 
-                            { anime.licensors.length !=0 && <>
+                            { anime.licensors.length !=0 && 
                             <li className="mb-2">Licensors: {anime.licensors.map((licensor: any, index: number) => {
                                 return anime.licensors.length - 1 === index ?
                                     <span key={index}><Link href={ licensor.url }>{ licensor.name }</Link>.</span>
                                 :
                                     <span key={index}><Link href={ licensor.url }>{ licensor.name }</Link>, </span>
-                            })}</li></>}
+                            })}</li>}
 
                             { anime.duration && 
                                 <li className="mb-2">Duration: { anime.duration }</li>
@@ -102,6 +104,7 @@ export default async function AnimeDetails({ params } : any) {
                             <iframe width="100%" height="440px" src={ anime.trailer.embed_url } title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                         </div>
                         }
+                        { animeEpisodes.length !=0 &&
                         <div className="mb-5">
                             <h4 className="mb-2 font-semibold">Episodes</h4>
                             <ul className="flex gap-3 flex-wrap">
@@ -115,10 +118,10 @@ export default async function AnimeDetails({ params } : any) {
                                 )
                                 })}
                             </ul>
-                        </div>
+                        </div>}
                     </div>
                 </div>
-                { anime.relations.length !=0 && <>
+                { anime.relations.length !=0 &&
                 <div className=" bg-gray-950 p-4 text-white">
                     <h4 className="mb-2">Other Information</h4>
                     {anime.relations.map((relation: any, index: number) => {
@@ -127,26 +130,22 @@ export default async function AnimeDetails({ params } : any) {
                                 <span className="text-white capitalize">{ relation.relation }: </span> 
                                     {relation.entry.map((entry: any, index: number) => {
                                         return relation.entry.length - 1 === index ?
-                                        (
                                             <span key={index}>
                                                 <Link className="cs-link" href={ `/${entry.type}/${entry.mal_id}` }>
                                                     { entry.name }
                                                 </Link>
                                             .</span>
-                                        )
                                         :
-                                        (
                                             <span key={index}>
                                                 <Link className="cs-link" key={index} href={ `/${entry.type}/${entry.mal_id}` }>
                                                     <span className="cs-link">{ entry.name }</span>
                                                 </Link>
                                             , </span>
-                                        )
                                     })}
                             </p>
                         )
                     })}
-                </div></>}
+                </div>}
             </div>
         </section>
     )

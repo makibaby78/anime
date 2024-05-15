@@ -14,7 +14,7 @@ export default function Card(props: any) {
                         alt={ props.details.title }
                         width={225}
                         height={318}
-                        style={{ width: '100%', height: 'auto' }}
+                        className="object-cover"
                     />
                 </Link>
             </div>

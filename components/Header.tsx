@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className="header py-5 p-4">
             <div className="container mx-auto max-w-screen-lg">
-                <div className="flex justify-between items-center w-full mb-5">
+                <div className="flex justify-between items-center w-full">
                     <div className="logo">
                         <Link href="/">
                             <Image
@@ -38,8 +38,8 @@ export default function Header() {
                         </div>
                     </form>
                 </div>
-                <div className="border-t border-b border-dashed border-white">
-                    <Menu class="flex gap-x-4 py-3 font-semibold text-white" />
+                <div className="border-t border-b border-dashed border-white hidden md:block mt-5">
+                    <Menu class=" gap-x-4 py-3 font-semibold text-white flex" />
                 </div>
             </div>
         </div>

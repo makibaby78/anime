@@ -45,6 +45,18 @@
   font-size: 13px;
   transition-duration: 0.2s;
 }
+
 .episode-box:hover{
   background-color: #fab141;
+}
+
+.episode-box-active{
+  background-color: #fab141;
+}
+
+@media only screen and (max-width: 768px) {
+  .card{
+    max-width: calc(33% - 0.8rem);
+  }
+  
 }
