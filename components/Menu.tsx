@@ -20,6 +20,11 @@ export default function Menu(props: any) {
                 </Link>
             </li>
             <li>
+                <Link href="/top-characters">
+                    CHARACTER RANKINGS
+                </Link>
+            </li>
+            <li>
                 <Link href="/genres">
                     GENRES
                 </Link>

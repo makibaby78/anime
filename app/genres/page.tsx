@@ -13,7 +13,7 @@ export default async function Genres() {
                 <ul className="text-white list-disc pl-4 columns-4">
                     {genres.map((genre: any, index: number) => {
                     return (
-                        <li className="mb-2" key={ genre.mal_id }>{ genre.name }</li>
+                        <li className="mb-2" key={ index }>{ genre.name }</li>
                     )
                     })}
                 </ul>
