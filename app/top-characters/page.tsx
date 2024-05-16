@@ -12,8 +12,14 @@ export default async function Characters() {
 
     const currentPage = searchParams.get('page');
 
-    const res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${currentPage}`);
+    let res;
 
+    if(currentPage){
+        res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${currentPage}`);
+    }else{
+        res = await fetch(`https://api.jikan.moe/v4/top/characters`);
+    }
+    
     const resJson = (await res.json());
     
     const charactersData = resJson.data;
@@ -34,7 +40,7 @@ export default async function Characters() {
                         return (
                             <div className="card overflow-hidden" key={ index }>
                                 <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
-                                    <Link href={ `/character/${character.mal_id}`}>
+                                    <Link href={ `/top-characters/${character.mal_id}`}>
                                         <Image
                                             src={ `${character.images.jpg.image_url}` }
                                             alt={ character.name }
