@@ -14,7 +14,7 @@ export default async function Upcoming() {
             Latest
           </h1>
           <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
-              {upcoming.map((item: any, index: number) => {
+              {upcoming?.map((item: any, index: number) => {
               return (
                   <div className="card overflow-hidden" key={ index }>
                     <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
@@ -41,25 +41,6 @@ export default async function Upcoming() {
                             </Link>
                         )
                         })}
-                      </div>
-                    }
-                    { item.score && 
-                      <div className="mt-2 flex items-center gap-x-1">
-                          <svg
-                              className="text-white"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="14"
-                              height="14"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              >
-                              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
-                          <span className="text-xs text-white">{ item.score }</span> 
                       </div>
                     }
                   </div>
