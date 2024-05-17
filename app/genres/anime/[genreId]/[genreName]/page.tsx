@@ -1,6 +1,6 @@
 import Listing from "@/components/Listing";
 
-export default async function Genre({ params } : any) {
+export default async function AnimeGenre({ params } : any) {
 
   const res = await fetch(`https://api.jikan.moe/v4/anime?genres=${params.genreId}`);
 

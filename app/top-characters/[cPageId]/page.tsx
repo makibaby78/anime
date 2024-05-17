@@ -4,7 +4,7 @@ import Pagination from "@/components/Pagination";
 import Loading from "../../loading";
 import { Suspense } from "react";
 
-export default async function Characters({ params } : any) {
+export default async function TopCharacters({ params } : any) {
 
     const res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${params.cPageId}`);
 
@@ -22,7 +22,7 @@ export default async function Characters({ params } : any) {
                 </h1>
                 <Suspense fallback={<Loading />}>  
                     <div>
-                        <Pagination pagination={pagination} link="" currentPage={params.cPageId} />
+                        <Pagination pagination={pagination} currentPage={params.cPageId} />
                     </div>
                     <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
                         {charactersData?.map((character: any, index: number) => {

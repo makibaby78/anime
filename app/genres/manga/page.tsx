@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default async function MangaGenres() {
+export default async function GenresManga() {
 
   const res = await fetch("https://api.jikan.moe/v4/genres/manga");
 
