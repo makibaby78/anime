@@ -7,6 +7,8 @@ export default async function Upcoming() {
   const upcoming = (await res.json()).data;
 
   return (
+    <>
       {/* <Listing details={upcoming} title="Upcoming" for="anime" /> */}
+    </>
   );
 }
