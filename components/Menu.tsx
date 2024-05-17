@@ -20,7 +20,7 @@ export default function Menu(props: any) {
                 </Link>
             </li>
             <li>
-                <Link href="/top-characters">
+                <Link href="/top-characters/1">
                     CHARACTER RANKINGS
                 </Link>
             </li>

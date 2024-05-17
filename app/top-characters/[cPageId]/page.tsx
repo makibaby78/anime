@@ -1,24 +1,13 @@
-'use client';
-
-import { useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import Link from 'next/link'
 import Pagination from "@/components/Pagination";
-import Loading from "../loading";
+import Loading from "../../loading";
 import { Suspense } from "react";
 
-export default async function Characters() {
-    const searchParams = useSearchParams();
+export default async function Characters({ params } : any) {
 
-    const currentPage = searchParams.get('page');
+    const res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${params.cPageId}`);
 
-    let res;
-
-    if(currentPage){
-        res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${currentPage}`);
-    }else{
-        res = await fetch(`https://api.jikan.moe/v4/top/characters`);
-    }
     
     const resJson = (await res.json());
     
@@ -33,7 +22,7 @@ export default async function Characters() {
                 </h1>
                 <Suspense fallback={<Loading />}>  
                     <div>
-                        <Pagination pagination={pagination} link="top-characters" currentPage={currentPage} />
+                        <Pagination pagination={pagination} link="" currentPage={params.cPageId} />
                     </div>
                     <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
                         {charactersData?.map((character: any, index: number) => {
