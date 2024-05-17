@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Loading from "./loading";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -35,6 +36,7 @@ export default function RootLayout({
               {children}
             </Suspense>
           <Footer/>
+          <SpeedInsights />
       </body>
     </html>
   );
