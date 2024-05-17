@@ -8,7 +8,7 @@ export default async function Manga() {
 
   return (
     <>
-        <Listing details={top} title="Top Rated Manga" for="manga" />
+        {/* <Listing details={top} title="Top Rated Manga" for="manga" /> */}
     </>
   );
 }

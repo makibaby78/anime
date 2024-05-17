@@ -8,7 +8,6 @@ export default async function TopCharacters({ params } : any) {
 
     const res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${params.cPageId}`);
 
-    
     const resJson = (await res.json());
     
     const charactersData = resJson.data;
