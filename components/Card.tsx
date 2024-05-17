@@ -22,9 +22,11 @@ export default function Card(props: any) {
                 <div className="flex gap-x-1 gap-y-1 flex-wrap mt-2">
                     {props.details.genres.map((genre: any, index: number) => {
                     return (
-                        <div key={ index } className="p-1 text-xs text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
-                            { genre.name }
-                        </div>
+                        <Link key={ index } href={ `/genres/${props.for}/${genre.mal_id}/${genre.name.toLowerCase()}`}>
+                            <div className="p-1 text-xs text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+                                { genre.name }
+                            </div>
+                        </Link>
                     )
                     })}
                 </div>

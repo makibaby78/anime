@@ -14,7 +14,11 @@ export default async function AnimeGenres() {
                 <ul className="text-white list-disc pl-4 columns-2 md:columns-4">
                     {genres.map((genre: any, index: number) => {
                     return (
-                        <li className="mb-2" key={ index }><Link className='cs-link' href={ `/genres/anime/${ genre.mal_id }` }>{ genre.name }</Link></li>
+                        <li className="mb-2" key={ index }>
+                            <Link className='cs-link' href={ `/genres/anime/${ genre.mal_id }/${ genre.name.toLowerCase() }` }>
+                                { genre.name }
+                            </Link>
+                        </li>
                     )
                     })}
                 </ul>

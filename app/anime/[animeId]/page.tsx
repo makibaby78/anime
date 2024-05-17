@@ -50,9 +50,9 @@ export default async function AnimeDetails({ params } : any) {
                             { anime.genres.length !=0 && <>
                             <li className="mb-2">Genres: {anime.genres.map((genre: any, index: number) => {
                                 return anime.genres.length - 1 === index ?
-                                    <span key={index}><Link href={ genre.url }>{ genre.name }</Link>.</span>
+                                    <span key={index}><Link href={ `/genres/anime/${genre.mal_id}/${genre.name}` } >{ genre.name }</Link>.</span>
                                 :
-                                    <span key={index}><Link href={ genre.url }>{ genre.name }</Link>, </span>
+                                    <span key={index}><Link href={ `/genres/anime/${genre.mal_id}/${genre.name}` } >{ genre.name }</Link>, </span>
                             })}
                             </li></>}
 

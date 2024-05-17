@@ -61,9 +61,9 @@ export default async function MangaDetails({ params } : any) {
                             { manga.genres.length !=0 && <>
                             <li className="mb-2">Genres: {manga.genres.map((genre: any, index: number) => {
                                 return manga.genres.length - 1 === index ?
-                                    <span key={index}><Link href={ genre.url }>{ genre.name }</Link>.</span>
+                                    <span key={index}><Link href={ `/genres/manga/${genre.mal_id}/${genre.name}` }>{ genre.name }</Link>.</span>
                                 :
-                                    <span key={index}><Link href={ genre.url }>{ genre.name }</Link>, </span>
+                                    <span key={index}><Link href={ `/genres/manga/${genre.mal_id}/${genre.name}` }>{ genre.name }</Link>, </span>
                             })}
                             </li></>}
 
