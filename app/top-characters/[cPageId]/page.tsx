@@ -34,7 +34,6 @@ export default async function TopCharacters({ params } : any) {
                                             alt={ character.name }
                                             width={225}
                                             height={318}
-                                            priority
                                             className="object-cover"
                                         />
                                     </Link>

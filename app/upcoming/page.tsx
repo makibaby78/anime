@@ -11,7 +11,7 @@ export default async function Upcoming() {
     <section className="py-5 p-4">
       <div className="container mx-auto max-w-screen-lg">
           <h1 className="capitalize mb-4 font-extrabold leading-none tracking-tight text-white text-md md:text-xl lg:text-2xl">
-            Latest
+            Upcoming
           </h1>
           <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
               {upcoming?.map((item: any, index: number) => {
@@ -24,7 +24,6 @@ export default async function Upcoming() {
                               alt={ item.title }
                               width={225}
                               height={318}
-                              priority
                               className="object-cover"
                           />
                       </Link>

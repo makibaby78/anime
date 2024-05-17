@@ -24,7 +24,6 @@ export default async function Latest() {
                               alt={ item.title }
                               width={225}
                               height={318}
-                              priority
                               className="object-cover"
                           />
                       </Link>
