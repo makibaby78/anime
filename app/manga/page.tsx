@@ -4,11 +4,11 @@ export default async function Manga() {
 
   const res = await fetch("https://api.jikan.moe/v4/top/manga");
 
-  const top = (await res.json()).data;
+  const manga = (await res.json()).data;
 
   return (
     <>
-      {/* <Listing details={top} title="Top Rated Manga" for="manga" /> */}test
+      {/* <Listing details={manga} title="Top Rated Manga" for="manga" /> */}
     </>
   );
 }
