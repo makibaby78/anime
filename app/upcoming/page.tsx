@@ -8,7 +8,7 @@ export default async function Upcoming() {
 
   return (
     <>
-      <Listing details={upcoming} title="Upcoming" for="anime" />
+      {/* <Listing details={upcoming} title="Upcoming" for="anime" /> */}
     </>
   );
 }
