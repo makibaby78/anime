@@ -58,5 +58,10 @@
   .card{
     max-width: calc(33% - 0.8rem);
   }
-  
+}
+
+@media only screen and (max-width: 480px) {
+  .image-wrapper{
+    height: 150px;
+  }
 }

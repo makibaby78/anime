@@ -25,8 +25,13 @@ export default function Menu(props: any) {
                 </Link>
             </li>
             <li>
-                <Link href="/genres">
+                <Link href="/genres/anime">
                     GENRES
+                </Link>
+            </li>
+            <li>
+                <Link href="/manga">
+                    MANGA
                 </Link>
             </li>
         </ul>

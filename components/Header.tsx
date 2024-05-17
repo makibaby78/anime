@@ -38,8 +38,8 @@ export default function Header() {
                         </div>
                     </form>
                 </div>
-                <div className="border-t border-b border-dashed border-white hidden md:block mt-5">
-                    <Menu class=" gap-x-4 py-3 font-semibold text-white flex" />
+                <div className="border-t border-b border-dashed border-white mt-5">
+                    <Menu class="gap-x-4 gap-y-5 py-3 font-semibold text-white flex flex-wrap text-sm md:text-base" />
                 </div>
             </div>
         </div>

@@ -8,7 +8,7 @@ export default async function Home() {
 
   return (
     <>
-      <Listing details={topanime} title="Top" />
+      <Listing details={topanime} title="Top Rated Anime" for="anime" />
     </>
   );
 }

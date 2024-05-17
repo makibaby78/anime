@@ -14,17 +14,19 @@ export default async function AnimeDetails({ params } : any) {
     return (
         <section className="py-5 p-4">
             <div className="container mx-auto max-w-screen-lg">
-                <div className="flex items-start gap-x-4 text-white">
-                    <div className="w-1/4">
-                        <Image
-                            src={ `${anime.images.jpg.image_url}` }
-                            alt={ anime.title_japanese }
-                            width={225}
-                            height={318}
-                            style={{ width: '100%', height: 'auto', maxWidth: '450px' }}
-                            className="mb-4"
-                        />
-                        <ul className="pl-4 list-disc text-xs">
+                <div className="flex md:flex-row flex-col items-start gap-4 text-white">
+                    <div className="md:w-1/4 w-full flex md:flex-col flex-row gap-x-4">
+                        <div className="md:w-full w-2/4">
+                            <Image
+                                src={ `${anime.images.jpg.image_url}` }
+                                alt={ anime.title_japanese }
+                                width={225}
+                                height={318}
+                                style={{ width: '100%', height: 'auto', maxWidth: '450px' }}
+                                className="mb-4"
+                            />
+                        </div>
+                        <ul className="pl-4 list-disc text-xs md:w-full w-2/4">
                             <li className="mb-2">English Title: { anime.title_english }</li>
 
                             <li className="mb-2">Status: { anime.status }</li>
@@ -87,7 +89,7 @@ export default async function AnimeDetails({ params } : any) {
                             }
                         </ul>
                     </div>
-                    <div className="w-3/4">
+                    <div className="md:w-3/4 w-full">
                         <h1 className="mb-4 font-extrabold leading-none tracking-tight text-md md:text-xl lg:text-2xl">
                             { anime.title }
                         </h1>

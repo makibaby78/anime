@@ -1,5 +1,6 @@
+import Link from 'next/link'
 
-export default async function Genres() {
+export default async function AnimeGenres() {
 
   const res = await fetch("https://api.jikan.moe/v4/genres/anime");
 
@@ -8,12 +9,12 @@ export default async function Genres() {
   return (
     <section className="py-5 p-4">
         <div className="container mx-auto max-w-screen-lg">
-            <h1 className="mb-4 font-extrabold leading-none tracking-tight text-white text-md md:text-xl lg:text-2xl">Genres</h1>
+            <h1 className="mb-4 font-extrabold leading-none tracking-tight text-white text-md md:text-xl lg:text-2xl">Anime Genres</h1>
             <div className="listing-genres">
-                <ul className="text-white list-disc pl-4 columns-4">
+                <ul className="text-white list-disc pl-4 columns-2 md:columns-4">
                     {genres.map((genre: any, index: number) => {
                     return (
-                        <li className="mb-2" key={ index }>{ genre.name }</li>
+                        <li className="mb-2" key={ index }><Link className='cs-link' href={ `/genres/anime/${ genre.mal_id }` }>{ genre.name }</Link></li>
                     )
                     })}
                 </ul>

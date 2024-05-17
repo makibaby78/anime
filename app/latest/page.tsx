@@ -8,7 +8,7 @@ export default async function Latest() {
 
   return (
     <>
-      <Listing details={latest} title="Latest"/>
+      <Listing details={latest} title="Latest" for="anime"/>
     </>
   );
 }

@@ -6,7 +6,7 @@ export default function Card(props: any) {
     return (
         <>
             <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
-                <Link href={ `/anime/${props.details.mal_id}`}>
+                <Link href={ `/${props.for}/${props.details.mal_id}`}>
                     <Image
                         src={ `${props.details.images.jpg.image_url}` }
                         alt={ props.details.title }

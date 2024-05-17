@@ -12,6 +12,7 @@ export default function Listing(props: any) {
                         <div className="card overflow-hidden" key={ index }>
                             <Card 
                                 details={ anime }
+                                for={ props.for }
                             />
                         </div>
                     )
