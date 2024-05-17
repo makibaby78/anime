@@ -14,7 +14,7 @@ export default async function Latest() {
             Latest
           </h1>
           <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
-              {latest?.map((item: any, index: number) => {
+              {latest.map((item: any, index: number) => {
               return (
                   <div className="card overflow-hidden" key={ index }>
                     <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
