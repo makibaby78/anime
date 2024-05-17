@@ -14,7 +14,7 @@ export default async function Character({ params } : any) {
                     <div className="w-1/4">
                         <Image
                             src={ `${character.images.webp.image_url}` }
-                            alt={ character.title_japanese }
+                            alt={ character.name }
                             width={225}
                             height={318}
                             style={{ width: '100%', height: 'auto', maxWidth: '450px' }}
