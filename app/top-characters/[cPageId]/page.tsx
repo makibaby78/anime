@@ -28,7 +28,7 @@ export default async function TopCharacters({ params } : any) {
                         return (
                             <div className="card overflow-hidden" key={ index }>
                                 <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
-                                    <Link href={ `/top-characters/${character.mal_id}`}>
+                                    <Link href={ `/characters/${character.mal_id}`}>
                                         <Image
                                             src={ `${character.images.jpg.image_url}` }
                                             alt={ character.name }
