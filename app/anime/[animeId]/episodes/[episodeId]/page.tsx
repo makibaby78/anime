@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import { notFound } from 'next/navigation';
+import { getAnime, getAnimeEpisodes, getAnimeEpisode, getAnimeEpisodePicture } from "@/lib/api";
 
 export default async function Episode({ 
             params,
@@ -11,33 +12,21 @@ export default async function Episode({
             };
     }) {
 
-    const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`);
+    const anime = (await getAnime(params.animeId)).data;
 
-    const anime = (await fetchAnime.json()).data;
-
-    const fetchAnimeEpisodes = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/videos/episodes`);
-
-    const animeEpisodes = (await fetchAnimeEpisodes.json()).data.reverse();
+    const animeEpisodes = (await getAnimeEpisodes(params.animeId)).data.reverse();
 
     if (await animeEpisodes.length < params.episodeId) {
         notFound();
     }
 
-    const fetchEpisode = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/episodes/${params.episodeId}`);
-
-    const episode = (await fetchEpisode.json()).data;
+    const episode = (await getAnimeEpisode(params.animeId, params.episodeId)).data;
 
     if (!episode) {
         notFound();
     }
 
-    const fetchAnimeImage = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/pictures`);
-
-    const animeImage = (await fetchAnimeImage.json()).data[0].jpg.image_url;
-
-    const fetchAnimeVideos = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/videos`);
-
-    const animeVideos = (await fetchAnimeVideos.json()).data;
+    const animeImage = (await getAnimeEpisodePicture(params.animeId)).data[0].jpg.image_url;
 
     return (
         <section className="py-5 p-4">

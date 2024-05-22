@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { getCharacter } from "@/lib/api";
 
 export default async function Character({ params } : any) {
 
-    const res = await fetch(`https://api.jikan.moe/v4/characters/${params.characterId}/full`);
-
-    const character = (await res.json()).data;
+    const character = (await getCharacter(params.characterId)).data;
 
     return (
         <section className="py-5 p-4">
