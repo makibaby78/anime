@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { getTopManga } from "@/lib/api";
 
 export default async function Manga() {
 
-  const res = await fetch("https://api.jikan.moe/v4/top/manga");
-
-  const manga = (await res.json()).data;
+  const manga = (await getTopManga()).data;
 
   return (
     <section className="py-5 p-4">

@@ -2,13 +2,12 @@ import Image from "next/image";
 import Link from 'next/link'
 import Pagination from "@/components/Pagination";
 import Loading from "../../loading";
+import { getCharacterRankings } from "@/lib/api";
 import { Suspense } from "react";
 
 export default async function TopCharacters({ params } : any) {
 
-    const res = await fetch(`https://api.jikan.moe/v4/top/characters?page=${params.cPageId}`);
-
-    const resJson = (await res.json());
+    const resJson = (await getCharacterRankings(params.cPageId));
     
     const charactersData = resJson.data;
     const pagination = resJson.pagination;

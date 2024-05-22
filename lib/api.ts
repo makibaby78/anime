@@ -15,3 +15,15 @@ export const getLatestAnime = async () => {
 
     return latestAnime.json();
 }
+
+export const getTopManga = async () => {
+    const topManga = await fetch("https://api.jikan.moe/v4/top/manga");
+
+    return topManga.json();
+}
+
+export const getCharacterRankings = async (page:any) => {
+    const characterRankings = await fetch(`https://api.jikan.moe/v4/top/characters?page=${page}`);
+
+    return characterRankings.json();
+}
