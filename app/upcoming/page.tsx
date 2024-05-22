@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { getUpcomingAnime } from "@/lib/api";
 
 export default async function Upcoming() {
 
-  const res = await fetch("https://api.jikan.moe/v4/seasons/upcoming");
-
-  const upcoming = (await res.json()).data;
+  const upcoming = (await getUpcomingAnime()).data;
 
   return (
     <section className="py-5 p-4">

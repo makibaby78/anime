@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from 'next/link'
+import { getLatestAnime } from "@/lib/api";
 
 export default async function Latest() {
 
-  const res = await fetch("https://api.jikan.moe/v4/schedules");
-
-  const latest = (await res.json()).data;
+  const latest = (await getLatestAnime()).data;
 
   return (
     <section className="py-5 p-4">

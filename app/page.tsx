@@ -1,10 +1,9 @@
 import Listing from "@/components/Listing";
+import { getTopAnime } from "@/lib/api";
 
 export default async function Home() {
 
-  const res = await fetch("https://api.jikan.moe/v4/top/anime");
-
-  const topanime = (await res.json()).data;
+  const topanime = (await getTopAnime()).data;
 
   return (
     <>
