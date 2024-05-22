@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link'
 import Menu from "@/components/Menu";
+import Search from "@/components/Search";
 
 export default function Header() {
     return (
@@ -19,24 +20,8 @@ export default function Header() {
                         </Link>
                     </div>
                     
-                    <form>   
-                        <div className="relative flex items-center gap-x-3">
-                            <input className="shadow lg:w-72 w-full px-3 py-2 rounded" type="search" id="default-search" placeholder="Search Anime..." required />
-                            <button>            
-                                <svg className="w-5 h-5 text-white" 
-                                aria-hidden="true" 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                fill="none" 
-                                viewBox="0 0 20 20">
-                                    <path stroke="currentColor" 
-                                    strokeLinecap="round" 
-                                    strokeLinejoin="round" 
-                                    strokeWidth="2" 
-                                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
+                    <Search />
+
                 </div>
                 <div className="border-t border-b border-dashed border-white mt-5">
                     <Menu class="gap-x-4 gap-y-5 py-3 font-semibold text-white flex flex-wrap text-sm md:text-base" />
