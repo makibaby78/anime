@@ -61,3 +61,11 @@ export const getCharacter = async (id:any) => {
 
     return character.json();
 }
+
+export const getSearchResult = async (search:string) => {
+    const searchLower = search.toLowerCase();
+
+    const res = await fetch(`https://api.jikan.moe/v4/anime?q=${searchLower}`);
+
+    return res.json();
+}
