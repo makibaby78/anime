@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from 'next/navigation';
 import { getAnime, getAnimeEpisodes, getAnimeEpisode, getAnimeEpisodePicture } from "@/lib/api";
 
-export default async function Episode({ 
+export default async function Page({ 
             params,
         } : {
             params: {

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import { getCharacter } from "@/lib/api";
 
-export default async function Character({ params } : any) {
+export default async function Page({ params } : any) {
 
     const character = (await getCharacter(params.characterId)).data;
 

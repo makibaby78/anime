@@ -9,7 +9,7 @@ export default function Listing(props: any) {
                     { props.title }
                 </h1>
                 <div className="card-wrapper flex gap-x-4 gap-y-4 flex-wrap justify-between">
-                    {props.details.map((anime: any, index: number) => {
+                    {props.details?.map((anime: any, index: number) => {
                     return (
                         <div className="card overflow-hidden" key={ index }>
                             <Card 

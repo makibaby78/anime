@@ -5,7 +5,7 @@ import Loading from "../../loading";
 import { getCharacterRankings } from "@/lib/api";
 import { Suspense } from "react";
 
-export default async function TopCharacters({ params } : any) {
+export default async function Page({ params } : any) {
 
     const resJson = (await getCharacterRankings(params.cPageId));
     

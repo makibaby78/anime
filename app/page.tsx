@@ -1,7 +1,7 @@
 import Listing from "@/components/Listing";
 import { getTopAnime } from "@/lib/api";
 
-export default async function Home() {
+export default async function Page() {
 
   const topanime = (await getTopAnime()).data;
 

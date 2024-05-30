@@ -1,9 +1,11 @@
 "use client"
 
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from 'next/navigation';
 import { useState, ChangeEvent } from "react";
 
 export default function Search() {
+    const searchParams = useSearchParams()
+    const { replace } = useRouter();
 
     // initiate the router from next/navigation
 
@@ -21,28 +23,18 @@ export default function Search() {
 
     }
 
+    const handleSearch = (term: string) => {
 
+        const params = new URLSearchParams(searchParams);
 
-    // If the user clicks enter on the keyboard, the input value should be submitted for search 
-
-    // We are now routing the search results to another page but still on the same page
-
-
-    const handleSearch = () => {
-
-        if (inputValue) return router.push(`/search?q=${inputValue}`);
-
-        if (!inputValue) return router.push("/search")
+        if (term) {
+            params.set('q', term);
+        } else {
+            params.delete('q');
+        }
+        replace(`search/?${params.toString()}`);
 
     }
-
-
-    const handleKeyPress = (event: { key: any; }) => {
-
-        if (event.key === "Enter") return handleSearch()
-
-    }
-
 
     return (
         <form>   
@@ -52,9 +44,9 @@ export default function Search() {
                     type="text" 
                     id="default-search" 
                     placeholder="Search Anime..."
-                    value={inputValue ?? ""} 
-                    onChange={handleChange}
-                    onKeyDown={handleKeyPress} 
+                    onChange={(e) => {
+                        handleSearch(e.target.value);
+                    }}
                     required />
                 <button>            
                     <svg className="w-5 h-5 text-white" 

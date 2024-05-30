@@ -1,7 +1,7 @@
 import Listing from "@/components/Listing";
 import { getUpcomingAnime } from "@/lib/api";
 
-export default async function Upcoming() {
+export default async function Page() {
 
   const upcoming = (await getUpcomingAnime()).data;
 

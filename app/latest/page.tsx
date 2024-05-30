@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import { getLatestAnime } from "@/lib/api";
 
-export default async function Latest() {
+export default async function Page() {
 
   const latest = (await getLatestAnime()).data;
 

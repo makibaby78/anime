@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link'
 
-export default async function AnimeDetails({ params } : any) {
+export default async function Page({ params } : any) {
 
     const fetchAnime = await fetch(`https://api.jikan.moe/v4/anime/${params.animeId}/full`);
 

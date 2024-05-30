@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from 'next/link'
 import { getTopManga } from "@/lib/api";
 
-export default async function Manga() {
+export default async function Page() {
 
   const manga = (await getTopManga()).data;
 
