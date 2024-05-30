@@ -7,20 +7,22 @@ import { Suspense } from "react";
 import Loading from "../loading";
 
 export default function Page() {
-    const searchParams = useSearchParams()
-    const search = searchParams.get('q')
+    const searchParams = useSearchParams();
 
     const [data, setData] = useState(null);
 
     const [isLoading, setLoading] = useState(true)
  
     useEffect(() => {
+        let search = searchParams.get('q');
+
         fetch(`https://api.jikan.moe/v4/anime?q=${search}`)
             .then((res) => res.json())
             .then((data) => {
                 setData(data.data)
                 setLoading(false)
         })
+        
     }, [])
 
     if (isLoading) return <Loading />
