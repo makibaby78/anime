@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Listing from "@/components/Listing";
 import { Suspense } from "react";
 import Loading from "../loading";
@@ -22,7 +22,7 @@ export default function Page() {
                 setData(data.data)
                 setLoading(false)
         })
-        
+
     }, [search])
 
     if (isLoading) return <Loading />
