@@ -1,40 +1,4 @@
-"use client"
-
-import { useSearchParams, useRouter } from 'next/navigation';
-import { useState, ChangeEvent } from "react";
-
 export default function Search() {
-    const searchParams = useSearchParams()
-    const { replace } = useRouter();
-
-    // initiate the router from next/navigation
-
-    const router = useRouter()
-
-    // We need to grab the current search parameters and use it as default value for the search input
-
-    const [inputValue, setValue] = useState('')
-
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) =>{
-
-        const inputValue = event.target.value;
-
-        setValue(inputValue);
-
-    }
-
-    const handleSearch = (term: string) => {
-
-        const params = new URLSearchParams(searchParams);
-
-        if (term) {
-            params.set('q', term);
-        } else {
-            params.delete('q');
-        }
-        replace(`search/?${params.toString()}`);
-
-    }
 
     return (
         <form>   
@@ -44,9 +8,6 @@ export default function Search() {
                     type="text" 
                     id="default-search" 
                     placeholder="Search Anime..."
-                    onChange={(e) => {
-                        handleSearch(e.target.value);
-                    }}
                     required />
                 <button>            
                     <svg className="w-5 h-5 text-white" 
