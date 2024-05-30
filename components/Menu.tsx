@@ -9,7 +9,7 @@ export default function Menu(props: any) {
                     TOP RATED
                 </Link>
             </li>
-            <li>
+            {/* <li>
                 <Link 
                     href="/latest"
                     prefetch={false}
@@ -24,7 +24,7 @@ export default function Menu(props: any) {
                 >
                     UPCOMING
                 </Link>
-            </li>
+            </li> */}
             <li>
                 <Link 
                     href="/top-characters/1"
