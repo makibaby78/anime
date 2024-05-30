@@ -10,27 +10,42 @@ export default function Menu(props: any) {
                 </Link>
             </li>
             <li>
-                <Link href="/latest">
+                <Link 
+                    href="/latest"
+                    prefetch={false}
+                >
                     LATEST
                 </Link>
             </li>
             <li>
-                <Link href="/upcoming">
+                <Link 
+                    href="/upcoming"
+                    prefetch={false}
+                >
                     UPCOMING
                 </Link>
             </li>
             <li>
-                <Link href="/top-characters/1">
+                <Link 
+                    href="/top-characters/1"
+                    prefetch={false}
+                >
                     CHARACTER RANKINGS
                 </Link>
             </li>
             <li>
-                <Link href="/genres/anime">
+                <Link 
+                    href="/genres/anime"
+                    prefetch={false}
+                >
                     GENRES
                 </Link>
             </li>
             <li>
-                <Link href="/manga">
+                <Link 
+                    href="/manga"
+                    prefetch={false}
+                >
                     MANGA
                 </Link>
             </li>
