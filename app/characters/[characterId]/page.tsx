@@ -18,6 +18,7 @@ export default async function Page({ params } : any) {
                             height={318}
                             style={{ width: '100%', height: 'auto', maxWidth: '450px' }}
                             className="mb-4"
+                            unoptimized
                         />
                     </div>
                     <div className="w-3/4">

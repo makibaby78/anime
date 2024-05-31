@@ -20,6 +20,7 @@ export default async function Page({ params } : any) {
                                 alt={ manga.title_japanese }
                                 width={225}
                                 height={318}
+                                unoptimized
                                 style={{ width: '100%', height: 'auto', maxWidth: '450px' }}
                                 className="mb-4"
                             />

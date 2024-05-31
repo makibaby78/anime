@@ -13,7 +13,6 @@ export default function Card(props: any) {
                         width={225}
                         height={318}
                         unoptimized
-                        priority
                         className="object-cover"
                     />
                 </Link>

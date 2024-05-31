@@ -23,7 +23,7 @@ export default async function Page() {
                               alt={ item.title }
                               width={225}
                               height={318}
-                              priority
+                              unoptimized
                               className="object-cover"
                           />
                       </Link>

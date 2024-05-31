@@ -33,6 +33,7 @@ export default async function Page({ params } : any) {
                                             alt={ character.name }
                                             width={225}
                                             height={318}
+                                            unoptimized
                                             className="object-cover"
                                         />
                                     </Link>

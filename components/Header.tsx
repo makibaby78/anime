@@ -15,7 +15,7 @@ export default function Header() {
                                 alt="Gogo Anime"
                                 width={140}
                                 height={54}
-                                priority
+                                unoptimized
                             />
                         </Link>
                     </div>

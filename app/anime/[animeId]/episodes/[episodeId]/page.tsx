@@ -47,6 +47,7 @@ export default async function Page({
                                 width={1024}
                                 height={578}
                                 style={{ width: 'auto', height: 'auto' }}
+                                unoptimized
                             />
                         </Link>
                     </div>
