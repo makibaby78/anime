@@ -41,14 +41,6 @@ export default function Menu(props: any) {
                     GENRES
                 </Link>
             </li>
-            <li>
-                <Link 
-                    href="/manga"
-                    prefetch={false}
-                >
-                    MANGA
-                </Link>
-            </li>
         </ul>
     );
 }
