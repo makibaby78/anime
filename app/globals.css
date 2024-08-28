@@ -23,10 +23,11 @@
 }
 
 .card{
-  max-width: 150px;
+  max-width: calc(20% - 0.8rem);
 }
+
 .image-wrapper{
-  height: 200px;
+  height: 250px;
 }
 
 .cs-link {

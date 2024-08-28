@@ -11,11 +11,11 @@ export default function Header() {
                     <div className="logo">
                         <Link href="/">
                             <Image
-                                src="/logo.png"
                                 alt="Gogo Anime"
                                 width={140}
                                 height={54}
-                                unoptimized
+                                priority
+                                src="/logo.png"
                             />
                         </Link>
                     </div>

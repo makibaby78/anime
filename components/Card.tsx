@@ -8,11 +8,11 @@ export default function Card(props: any) {
             <div className="image-wrapper rounded shadow w-full overflow-hidden flex items-center bg-white">
                 <Link href={ `/${props.for}/${props.details.mal_id}`}>
                     <Image
-                        src={ `${props.details.images.jpg.image_url}` }
+                        src={ `${props.details.images.webp.large_image_url}` }
                         alt={ props.details.title }
                         width={225}
                         height={318}
-                        unoptimized
+                        priority
                         className="object-cover"
                     />
                 </Link>
