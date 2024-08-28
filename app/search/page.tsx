@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Listing from "@/components/Listing";
+import Listing from "@/_components/Listing";
 import { Suspense } from "react";
 import Loading from "../loading";
 

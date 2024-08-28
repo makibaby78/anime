@@ -1,5 +1,5 @@
-import Listing from "@/components/Listing";
-import { getUpcomingAnime } from "@/lib/api";
+import Listing from "@/_components/Listing";
+import { getUpcomingAnime } from "@/_lib/api";
 
 export default async function Page() {
 

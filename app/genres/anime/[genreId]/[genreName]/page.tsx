@@ -1,4 +1,4 @@
-import Listing from "@/components/Listing";
+import Listing from "@/_components/Listing";
 
 export default async function Page({ params } : any) {
 

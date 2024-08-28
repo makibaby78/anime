@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link'
-import { getCharacter } from "@/lib/api";
+import { getCharacter } from "@/_lib/api";
 
 export default async function Page({ params } : any) {
 

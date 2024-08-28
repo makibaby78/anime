@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Menu(props: any) {
 
     return (
-        <ul className={ props.class }>
+        <ul className="gap-x-4 gap-y-5 py-3 font-semibold text-white flex flex-wrap text-sm md:text-base">
             <li>
                 <Link href="/">
                     TOP RATED

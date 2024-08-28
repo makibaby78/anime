@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from 'next/link'
-import Pagination from "@/components/Pagination";
+import Pagination from "@/_components/Pagination";
 import Loading from "../../loading";
-import { getCharacterRankings } from "@/lib/api";
+import { getCharacterRankings } from "@/_lib/api";
 import { Suspense } from "react";
 
 export default async function Page({ params } : any) {

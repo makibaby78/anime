@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import { notFound } from 'next/navigation';
-import { getAnime, getAnimeEpisodes, getAnimeEpisode, getAnimeEpisodePicture } from "@/lib/api";
+import { getAnime, getAnimeEpisodes, getAnimeEpisode, getAnimeEpisodePicture } from "@/_lib/api";
 
 export default async function Page({ 
             params,

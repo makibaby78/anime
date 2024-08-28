@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from 'next/link'
-import { getLatestAnime } from "@/lib/api";
+import { getLatestAnime } from "@/_lib/api";
 
 export default async function Page() {
 

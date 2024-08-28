@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from 'next/link'
-import Menu from "@/components/Menu";
-import Search from "@/components/Search";
+import Menu from "@/_components/Menu";
+import Search from "@/_components/Search";
 
 export default function Header() {
     return (
@@ -24,7 +24,7 @@ export default function Header() {
 
                 </div>
                 <div className="border-t border-b border-dashed border-white mt-5">
-                    <Menu class="gap-x-4 gap-y-5 py-3 font-semibold text-white flex flex-wrap text-sm md:text-base" />
+                    <Menu />
                 </div>
             </div>
         </div>
